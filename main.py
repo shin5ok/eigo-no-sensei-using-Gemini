@@ -46,7 +46,10 @@ async def _on_chat_start():
     session = get_chat_session()
     cl.user_session.set("session", session)
 
-    await setup_runnable(settings)
+
+    await cl.Message(content="### どんなテーマで英語の練習をしたいですか?").send()
+
+    # await setup_runnable(settings)
 
 @cl.on_settings_update
 async def setup_runnable(settings):
