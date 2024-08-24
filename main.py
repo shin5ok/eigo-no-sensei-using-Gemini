@@ -6,13 +6,10 @@ from chainlit.input_widget import Select, Slider
 import config as c
 from llmmod import *
 
-# 設定
-
 PROJECT_ID = c.PROJECT_ID
 BUCKET_NAME = c.BUCKET_NAME
 LOCATION = c.LOCATION
 
-# 設定
 default_model = "Gemini-1.5-Flash"
 
 @cl.set_chat_profiles
