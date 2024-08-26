@@ -8,7 +8,7 @@ deploy:
 	--source=. \
 	--region=asia-northeast1 \
 	--cpu=1 \
-	--memory=1G \
+	--memory=512M \
 	--ingress=internal-and-cloud-load-balancing \
 	--set-env-vars=PROJECT_ID=${PROJECT_ID} \
 	--min-instances=1 \
@@ -21,5 +21,11 @@ sa:
 
 .PHONY: iam
 iam:
-	gcloud projects add-iam-policy-binding $(PROJECT_ID) --member=serviceAccount:eigo-teacher@$(PROJECT_ID).iam.gserviceaccount.com --role=roles/aiplatform.user
+	gcloud projects add-iam-policy-binding $(PROJECT_ID) \
+	--member=serviceAccount:eigo-teacher@$(PROJECT_ID).iam.gserviceaccount.com \
+	--role=roles/aiplatform.user
+
+	gcloud projects add-iam-policy-binding $(PROJECT_ID) \
+	--member=serviceAccount:eigo-teacher@$(PROJECT_ID).iam.gserviceaccount.com \
+	--role=roles/storage.objectUser
 

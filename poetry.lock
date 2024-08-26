@@ -501,6 +501,23 @@ proto-plus = ">=1.22.3,<2.0.0dev"
 protobuf = ">=3.20.2,<4.21.0 || >4.21.0,<4.21.1 || >4.21.1,<4.21.2 || >4.21.2,<4.21.3 || >4.21.3,<4.21.4 || >4.21.4,<4.21.5 || >4.21.5,<6.0.0dev"
 
 [[package]]
+name = "google-cloud-speech"
+version = "2.27.0"
+description = "Google Cloud Speech API client library"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "google_cloud_speech-2.27.0-py2.py3-none-any.whl", hash = "sha256:993b6e71e8ff91f614edc909d08df4638a19a58834725dd84553bfc024204b69"},
+    {file = "google_cloud_speech-2.27.0.tar.gz", hash = "sha256:6174d321cc81a58b36bde6e8399d7531d5012393953872a468cb664e42868385"},
+]
+
+[package.dependencies]
+google-api-core = {version = ">=1.34.1,<2.0.dev0 || >=2.11.dev0,<3.0.0dev", extras = ["grpc"]}
+google-auth = ">=2.14.1,<2.24.0 || >2.24.0,<2.25.0 || >2.25.0,<3.0.0dev"
+proto-plus = ">=1.22.3,<2.0.0dev"
+protobuf = ">=3.20.2,<4.21.0 || >4.21.0,<4.21.1 || >4.21.1,<4.21.2 || >4.21.2,<4.21.3 || >4.21.3,<4.21.4 || >4.21.4,<4.21.5 || >4.21.5,<6.0.0dev"
+
+[[package]]
 name = "google-cloud-storage"
 version = "2.18.2"
 description = "Google Cloud Storage API client library"
@@ -1790,4 +1807,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "558bc51f8e67dd3d15b10beea716af0feedc05abbe5b5f95441c4d00e533eec1"
+content-hash = "04ccfac04bdbccf46ffd731d308b0e218e589c1ee7389f6321d98b8224004d8f"
