@@ -11,13 +11,10 @@ import google.cloud.speech as speech
 import config as c
 from llmmod import *
 
-# 設定
-
 PROJECT_ID = c.PROJECT_ID
 BUCKET_NAME = c.BUCKET_NAME
 LOCATION = c.LOCATION
 
-# 設定
 default_model = "Gemini-1.5-Flash"
 
 
