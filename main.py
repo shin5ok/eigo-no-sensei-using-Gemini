@@ -126,7 +126,14 @@ async def _on_chat_start():
     cl.user_session.set("session", session)
 
 
-    await cl.Message(content="### どんなテーマで英語の練習をしたいですか?").send()
+    message = get_chat_response(session, """
+    挨拶と自己紹介をして、どんなテーマで英語の練習をしたいかを質問してください。
+    フランクな言葉遣いで。
+    例: 私の名前は〇〇です。今日はどんなテーマで英語の練習をしたいですか？
+        例えば、職場の同僚との会話、友達との食事、海外旅行 など。
+    """)
+    await cl.Message(content=message).send()
+    # await cl.Message(content="### どんなテーマで英語の練習をしたいですか?").send()
 
     # await setup_runnable(settings)
 
