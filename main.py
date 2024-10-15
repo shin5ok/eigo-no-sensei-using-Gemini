@@ -15,8 +15,6 @@ PROJECT_ID = c.PROJECT_ID
 BUCKET_NAME = c.BUCKET_NAME
 LOCATION = c.LOCATION
 
-default_model = "Gemini-1.5-Flash"
-
 
 @cl.step(type="tool")
 async def speech_to_text(content: bytes):
@@ -130,9 +128,6 @@ async def _on_chat_start():
         例えば、職場の同僚との会話、友達との食事、海外旅行 など。
     """)
     await cl.Message(content=message).send()
-    # await cl.Message(content="### どんなテーマで英語の練習をしたいですか?").send()
-
-    # await setup_runnable(settings)
 
 @cl.on_audio_chunk
 async def on_audio_chunk(chunk: cl.AudioChunk):

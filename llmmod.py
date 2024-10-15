@@ -18,7 +18,7 @@ def gen_system_intruction():
     return instructions
 
 model = GenerativeModel(
-        model_name="gemini-1.5-flash-001",
+        model_name="gemini-1.5-flash-002",
         system_instruction=gen_system_intruction(),
 )
 
