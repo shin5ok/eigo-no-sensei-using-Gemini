@@ -8,11 +8,13 @@ deploy:
 	--source=. \
 	--region=asia-northeast1 \
 	--cpu=1 \
-	--memory=512M \
+	--memory=1G \
 	--ingress=internal-and-cloud-load-balancing \
 	--set-env-vars=PROJECT_ID=${PROJECT_ID} \
 	--min-instances=1 \
 	--service-account=eigo-teacher@$(PROJECT_ID).iam.gserviceaccount.com \
+	--cpu-boost \
+	--session-affinity \
 	--allow-unauthenticated
 
 .PHONY: sa
