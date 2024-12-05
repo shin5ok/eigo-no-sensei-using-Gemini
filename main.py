@@ -70,9 +70,6 @@ async def speech_to_text2(audio_content: bytes):
         explicit_decoding_config=dict(encoding=cloud_speech.Encoding.ENCODING_UNSPECIFIED),
     )
 
-    # with open("/Users/kawanos/Desktop/test.wav", "rb") as f:
-    #     audio_content = f.read()
-
     request = cloud_speech.RecognizeRequest(
         recognizer=f"projects/{PROJECT_ID}/locations/global/recognizers/_",
         config=config,
