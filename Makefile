@@ -31,3 +31,24 @@ iam:
 	--member=serviceAccount:eigo-teacher@$(PROJECT_ID).iam.gserviceaccount.com \
 	--role=roles/storage.objectUser
 
+.PHONY: build-iam
+CLOUDBUILD_SA:=$(shell gcloud builds get-default-service-account | grep gserviceaccount | cut -d / -f 4)
+build-iam:
+
+	@echo "Grant some authorizations to the service account for Cloud Build"
+
+	gcloud projects add-iam-policy-binding $(PROJECT_ID) \
+	--member=serviceAccount:$(CLOUDBUILD_SA) \
+	--role=roles/artifactregistry.repoAdmin
+
+	gcloud projects add-iam-policy-binding $(PROJECT_ID) \
+	--member=serviceAccount:$(CLOUDBUILD_SA) \
+	--role=roles/cloudbuild.builds.builder
+
+	gcloud projects add-iam-policy-binding $(PROJECT_ID) \
+	--member=serviceAccount:$(CLOUDBUILD_SA) \
+	--role=roles/run.admin
+
+	gcloud projects add-iam-policy-binding $(PROJECT_ID) \
+	--member=serviceAccount:$(CLOUDBUILD_SA) \
+	--role=roles/storage.admin
