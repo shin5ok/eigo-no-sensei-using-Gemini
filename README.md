@@ -9,7 +9,7 @@ How to deploy
 
 2. Enable services
    ```bash
-    gcloud services enable aiplatform.googleapis.com
+    gcloud services enable aiplatform.googleapis.com run.googleapis.com
    ```
 
 3. Just type as below to deploy
