@@ -10,7 +10,7 @@ deploy:
 	--region=asia-northeast1 \
 	--cpu=1 \
 	--memory=1G \
-	# --ingress=internal-and-cloud-load-balancing \
+	--ingress=all \
 	--set-env-vars=PROJECT_ID=$(PROJECT_ID) \
 	--min-instances=1 \
 	--service-account=eigo-teacher@$(PROJECT_ID).iam.gserviceaccount.com \
