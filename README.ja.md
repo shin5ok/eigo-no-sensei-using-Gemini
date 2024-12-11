@@ -1,14 +1,11 @@
-# eigo-no-sensei-using-Gemini
-デプロイ方法
+# Gemini による英語の先生アプリ
+
+## デプロイ方法
 
 1. Google Cloud に環境設定
    gcloud への権限付与
    ```bash
    gcloud auth login
-   ```
-   Google Cloud SDK ライブラリへの権限付与
-   ```bash
-   gcloud auth application-default login
    ```
    プロジェクトID の設定
    ```bash
