@@ -32,6 +32,14 @@
    ```
 
    Cloud Run へのデプロイ
+   名前を指定（ここでは chat という Cloud Run サービスとする）
+   ```bash
+   export NAME=chat
+   ```
+
+   デプロイ
    ```bash
    make deploy
    ```
+
+完了後、割り当てられたURLにアクセスして動作確認します

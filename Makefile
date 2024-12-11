@@ -2,10 +2,13 @@
 BUCKET_NAME?=$(PROJECT_ID)
 PROJECT_ID?=$(GOOGLE_CLOUD_PROJECT)
 
+NAME := eigo-teacher
+RUN_NAME ?= $(NAME)
+
 
 .PHONY: deploy
 deploy:
-	gcloud run deploy eigo-teacher \
+	gcloud run deploy $(NAME) \
 	--source=. \
 	--region=asia-northeast1 \
 	--cpu=1 \
@@ -13,23 +16,23 @@ deploy:
 	--ingress=all \
 	--set-env-vars=PROJECT_ID=$(PROJECT_ID) \
 	--min-instances=1 \
-	--service-account=eigo-teacher@$(PROJECT_ID).iam.gserviceaccount.com \
+	--service-account=$(NAME)@$(PROJECT_ID).iam.gserviceaccount.com \
 	--cpu-boost \
 	--session-affinity \
 	--allow-unauthenticated
 
 .PHONY: sa
 sa:
-	gcloud iam service-accounts create eigo-teacher
+	gcloud iam service-accounts create $(NAME)
 
 .PHONY: iam
 iam:
 	gcloud projects add-iam-policy-binding $(PROJECT_ID) \
-	--member=serviceAccount:eigo-teacher@$(PROJECT_ID).iam.gserviceaccount.com \
+	--member=serviceAccount:$(NAME)@$(PROJECT_ID).iam.gserviceaccount.com \
 	--role=roles/aiplatform.user
 
 	gcloud projects add-iam-policy-binding $(PROJECT_ID) \
-	--member=serviceAccount:eigo-teacher@$(PROJECT_ID).iam.gserviceaccount.com \
+	--member=serviceAccount:$(NAME)@$(PROJECT_ID).iam.gserviceaccount.com \
 	--role=roles/storage.objectUser
 
 .PHONY: build-iam
