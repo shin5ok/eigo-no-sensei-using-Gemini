@@ -31,7 +31,7 @@
    make build-iam
    ```
 
-   Cloud Run へのデプロイ
+4. Cloud Run へのデプロイ
    名前を指定（ここでは chat という Cloud Run サービスとする）
    ```bash
    export NAME=chat
@@ -42,4 +42,5 @@
    make deploy
    ```
 
-完了後、割り当てられたURLにアクセスして動作確認します
+
+5. 完了後、割り当てられたURLにアクセスして動作確認します
