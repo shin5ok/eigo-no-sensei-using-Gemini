@@ -35,9 +35,9 @@
    ```
 
 5. Cloud Run へのデプロイ
-   名前を指定（ここでは chat という Cloud Run サービスとする）
+   名前を指定（ここでは chatapp という Cloud Run サービスとする）
    ```bash
-   export RUN_NAME=chat
+   export RUN_NAME=chatapp
    ```
 
    デプロイ
