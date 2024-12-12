@@ -8,7 +8,7 @@ RUN_NAME ?= $(NAME)
 
 .PHONY: deploy
 deploy:
-	gcloud run deploy $(NAME) \
+	gcloud run deploy $(RUN_NAME) \
 	--source=. \
 	--region=asia-northeast1 \
 	--cpu=1 \
