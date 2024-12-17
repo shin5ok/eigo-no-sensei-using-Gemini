@@ -17,6 +17,10 @@
    ```bash
    gcloud config set project <your PROJECT ID>
    ```
+   環境変数に設定
+   ```bash
+   export PROJECT_ID=<your PROJECT ID>
+   ```
 
 3. 必要なサービスを有効化
    ```bash
