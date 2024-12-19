@@ -5,7 +5,7 @@
 1. このリポジトリを clone します
    ```bash
    cd
-   https://github.com/kawanos/eigo-no-sensei-using-Gemini.git
+   git clone https://github.com/kawanos/eigo-no-sensei-using-Gemini.git
    ```
 
 2. Google Cloud に環境設定
