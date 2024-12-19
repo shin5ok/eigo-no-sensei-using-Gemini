@@ -17,16 +17,24 @@
    ```bash
    gcloud config set project <your PROJECT ID>
    ```
+   環境変数にも設定
+   ```bash
+   export PROJECT_ID=<your PROJECT ID>
+   ```
 
-3. 必要なサービスを有効化
+4. 必要なサービスを有効化
    ```bash
     gcloud services enable aiplatform.googleapis.com run.googleapis.com
    ```
 
-4. デプロイ前の準備
-   Cloud Run が利用するサービスアカウントの作成と、権限付与
+5. デプロイ前の準備
+   Cloud Run が利用するサービスアカウントの作成
    ```bash
-   make sa iam
+   make sa
+   ```
+   サービスアカウントへの権限付与
+   ```bash
+   make iam
    ```
 
    Cloud Build が利用するサービスアカウントへの権限付与
@@ -34,7 +42,7 @@
    make build-iam
    ```
 
-5. Cloud Run へのデプロイ
+7. Cloud Run へのデプロイ
    名前を指定（ここでは chatapp という Cloud Run サービスとする）
    ```bash
    export RUN_NAME=chatapp
@@ -46,4 +54,4 @@
    ```
 
 
-6. 完了後、割り当てられたURLにアクセスして動作確認します
+8. 完了後、割り当てられたURLにアクセスして動作確認します
