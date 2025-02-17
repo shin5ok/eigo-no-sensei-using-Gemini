@@ -8,7 +8,6 @@ RUN pip install --no-cache-dir poetry==1.8.5 \
 RUN poetry install
 
 
-# USER nobody
 ENV PYTHONUNBUFFERED=on
 
 CMD ["poetry", "run", "chainlit", "run", "main.py", "--port=8080", "--host=0.0.0.0", "--headless", "-d"]
